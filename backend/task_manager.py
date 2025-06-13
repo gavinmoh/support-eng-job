@@ -28,8 +28,5 @@ class TaskManager:
         return True
 
     def get_high_priority_tasks(self):
-        high_priority = []
-        for _id, task in self.tasks.items():
-            if task.priority == "high" or task.priority == 1:  # Assuming '1' is a high priority
-                high_priority.append(task)
-        return high_priority
+        # use list comprehension because it is cooler 😎
+        return [task for _id, task in self.tasks.items() if task.priority == "high" or task.priority == 1]
